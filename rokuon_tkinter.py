@@ -23,14 +23,14 @@ class Application(tk.Frame):
         self.Button1 = tk.Button(text=u'録音開始ボタン',width=20,command=self.button_clickrec)
         self.Button1.grid(row=0,column=0,pady=20)
         #録音停止ボタン
-        self.Button4 = tk.Button(text=u'録音停止ボタン',width=20,command=self.button_clickstop)
-        self.Button4.grid(row=0,column=1,pady=5)
+        self.Button2 = tk.Button(text=u'録音停止ボタン',width=20,command=self.button_clickstop)
+        self.Button2.grid(row=0,column=1,pady=5)
         #再生ボタン
-        self.Button2 = tk.Button(text=u'再生ボタン',width=20,command=self.button_clickplay)
-        self.Button2.grid(row=1,column=0,pady=5)
+        self.Button3 = tk.Button(text=u'再生ボタン',width=20,command=self.button_clickplay)
+        self.Button3.grid(row=1,column=0,pady=5)
         #出力ファイル変更ボタン
-        self.Button2 = tk.Button(text=u'出力ファイルの変更',width=20,command=self.button_clickfc)
-        self.Button2.grid(row=1,column=1,pady=5)
+        self.Button4 = tk.Button(text=u'出力ファイルの変更',width=20,command=self.button_clickfc)
+        self.Button4.grid(row=1,column=1,pady=5)
         #スクロールテキスト
         self.Scrolltext1 = st.ScrolledText()
         self.Scrolltext1.grid(row=2,columnspan=2,padx=20,pady=20)
