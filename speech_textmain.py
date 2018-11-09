@@ -12,15 +12,16 @@ class Application(tk.Frame):
         super().__init__(master)
         self.grid()
         self.create_widgets()
-        master.title(u"Speech to Text アプリ")
-        master.geometry("640x512")
+        self.master.title(u"Speech to Text アプリ")
+        self.master.geometry("640x512")
         self.cmd = ""
         self.file_na = file_name
         self.p = None
         self.rec_flag = False
-        master.protocol("WM_DELETE_WINDOW", self.on_closing)
+        self.master.protocol("WM_DELETE_WINDOW", self.on_closing)
         self.result = {}
         self.result_json = {}
+        self.lang_k = ""
 
     def create_widgets(self):
         #録音開始ボタン
@@ -85,21 +86,21 @@ class Application(tk.Frame):
 
     #テキスト変換処理
     def button_clicktx(self):
-        lang_k = self.SpinBox1.get()
-        speech_text2.text_json(self.file_na,lang_k)
+        self.lang_k = self.SpinBox1.get()
+        speech_text2.text_json(self.file_na,self.lang_k)
         self.Scrolltext1.delete('1.0', 'end')
         with open("result.json","r") as f:
             self.result_json = json.load(f)
         for i in range(len(self.result_json["results"])):
             self.cmd = self.result_json["results"][i]["alternatives"][0]["transcript"]
-            if lang_k == "ja-JP_BroadbandModel":
+            if self.lang_k == "ja-JP_BroadbandModel":
                 self.cmd = self.cmd.replace(' ','')
-            if lang_k == "en-US_BroadbandModel":
+            if self.lang_k == "en-US_BroadbandModel":
                 self.cmd = self.cmd.replace('%HESITATION ','')
             self.Scrolltext1.insert('end',self.cmd + '\n')
 
 #本体
 if __name__ == '__main__':
     root = tk.Tk()
-    app = Application(master=root,file_name='out1.wav')
+    app = Application(master=root,file_name='out1.mp3')
     app.mainloop()
