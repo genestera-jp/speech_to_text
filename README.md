@@ -3,7 +3,7 @@ Sox(Sound exchange)を使ってパソコンの音を録音し保存します。
 そのファイルを使ってIBMのWatsonによりテキストに変換します。  
 
 ## 環境  
-SoX(Sound exchange)がインストールされていること
+SoX(Sound exchange)がインストールされていること  
 IBMクラウドのspeech to textのID、パスワードを取得していること  
 
 ## 使い方  
@@ -26,6 +26,6 @@ Speech to Textボタンでテキストに変換します。
   
   
 ## 関連情報  
-1. [Speech to textを作ってみる](http://blog1.tela.daa.jp/ "孤独なコンピュータ")　　
+1. [音声を録音してみる](http://blog1.tela.daa.jp/?eid=142/ "孤独なコンピュータ")　　
 
 
